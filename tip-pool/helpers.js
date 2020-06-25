@@ -22,28 +22,23 @@ function appendTd(tr, value) {
 
     let newTd = document.createElement('td');
     newTd.innerText = value;
-    if (tr == String) {
-        tr.append(newTd);
-        appendDeleteBtn(newTd);
-    }
+
+    tr.append(newTd);
+    //appendDeleteBtn(newTd, 'X')
+
 }
 
-function appendDeleteBtn(tr, value) {
-
+function appendDeleteBtn(tr, type) {
+    //let tdpayment = document.getElementById('serverTable')
     let newbtn = document.createElement('td')
-    newbtn.className = 'deletebtn'
+    newbtn.id = 'deletebtn'
     newbtn.innerText = "X"
-    newbtn.addEventListener('click', removeEvent);
+    newbtn.addEventListener('click', function(e) {
+        let deleteTR = e.target.closest('tr');
+        delete allServers[deleteTR.id];
+        deleteTR.parentNode.removeChild(deleteTR);
+        updateServerTable();
+    });
     tr.append(newbtn);
-
-}
-
-function removeEvent(e) {
-
-    let deleteTR = e.target.closest('tr');
-    delete allServers[deleteTR.id];
-
-    deleteTR.parentNode.removeChild(deleteTR);
-    updateServerTable();
 
 }

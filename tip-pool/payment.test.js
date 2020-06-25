@@ -25,16 +25,16 @@ describe("testing payments", function() {
 
         appendPaymentTable(curPayment);
 
-        let summaryTDS = document.querySelectorAll('#paymentTable tbody tr td')
+        let curTdList = document.querySelectorAll('#paymentTable tbody tr td');
 
-        expect(summaryTDS.length).toEqual(4)
-        expect(summaryTDS[0].innerText).toEqual('$300')
-        expect(summaryTDS[1].innerText).toEqual('$30')
-        expect(summaryTDS[2].innerText).toEqual('%10')
-        expect(summaryTDS[3].innerText).toEqual('X')
+        expect(curTdList.length).toEqual(4);
+        expect(curTdList[0].innerText).toEqual('$300');
+        expect(curTdList[1].innerText).toEqual('$30');
+        expect(curTdList[2].innerText).toEqual('10%');
+        expect(curTdList[3].innerText).toEqual('X');
     });
 
-    it('should creat a new payment on createCurPayment', function() {
+    it('should create a new payment on createCurPayment', function() {
         let payment = {
             billAmt: '300',
             tipAmt: '30',

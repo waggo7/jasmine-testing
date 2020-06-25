@@ -32,9 +32,8 @@ describe('functions to help js setup and break down', function() {
     })
     it('expects a new trow and appends a td', function() {
         let Newtr = document.createElement('tr')
+
         appendTd(Newtr, 'new element here');
-
-
 
         expect(Newtr.children.length).toEqual(1);
         expect(Newtr.firstChild.innerHTML).toEqual('new element here')

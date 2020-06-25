@@ -31,7 +31,7 @@ describe("Servers test (with setup and tear-down)", function() {
             //expect(appendTd.length).toBeGreaterThanOrEqual(2);
         expect(summaryTDS[0].innerText).toEqual('Alice')
         expect(summaryTDS[1].innerText).toEqual('$0.00')
-        expect(summaryTDS[2].innerText).toEqual('x')
+        expect(summaryTDS[2].innerText).toEqual('X')
 
     })
 

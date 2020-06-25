@@ -39,7 +39,7 @@ function createCurPayment() {
 
     if (billAmt === '' || tipAmt === '') return;
 
-    if (Number(billAmt) > 0 && Number(tipAmt) >= 0) {
+    else if (Number(billAmt) > 0 && Number(tipAmt) >= 0) {
         return {
             billAmt: billAmt, //ie $300
             tipAmt: tipAmt, //ie $30
@@ -57,7 +57,7 @@ function appendPaymentTable(curPayment) {
     appendTd(newTr, '$' + curPayment.billAmt);
     appendTd(newTr, '$' + curPayment.tipAmt);
     appendTd(newTr, curPayment.tipPercent + '%');
-
+    appendDeleteBtn(newTr, 'payment')
     paymentTbody.append(newTr);
 }
 
